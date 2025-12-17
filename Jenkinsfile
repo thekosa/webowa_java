@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("pull") {
             steps {
-                git url: 'https://github.com/patczar/webowa_java.git', branch: 'master'
+                git url: 'https://github.com/thekosa/webowa_java.git', branch: 'master'
             }
         }
         stage("build") {
@@ -18,7 +18,7 @@ pipeline {
     }
     post {
         success {
-            archiveArtifacts 'target/*.war'
+            archiveArtifacts 'target/*.jar'
         }
     }
 }
